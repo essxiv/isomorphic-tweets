@@ -1,0 +1,35 @@
+{
+  "name": "twitter_stream",
+  "version": "1.0.0",
+  "description": "isomorphic",
+  "main": "app.js",
+  "scripts": {
+    "watch": "watchify app.js -o public/js/bundle.js -v",
+    "browserify": "browserify app.js | uglifyjs > public/js/bundle.js",
+    "build": "npm run browserify",
+    "start": "npm run watch & nodemon server.js"
+  },
+  "author": "e",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.9.2",
+    "node-jsx": "^0.13.3",
+    "ntwitter": "^0.5.0",
+    "react": "^15.4.2",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "nodemon": "^1.11.0",
+    "reactify": "^1.1.1",
+    "uglify-js": "^2.8.18",
+    "watchify": "^3.9.0"
+},
+    "browserify": {
+        "transform": [
+            "reactify"
+        ]
+    }
+}
